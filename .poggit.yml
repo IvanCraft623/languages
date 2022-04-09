@@ -1,0 +1,10 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/IvanCraft623/languages
+build-by-default: true
+branches:
+- main
+projects:
+  languages:
+    path: ""
+    model: virion
+    type: library
+...
