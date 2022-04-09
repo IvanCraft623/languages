@@ -1,0 +1,6 @@
+name: languages
+version: 0.0.1
+antigen: IvanCraft623\languages
+api: [4.0.0]
+php: [8.0]
+author: IvanCraft623
