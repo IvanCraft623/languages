@@ -96,9 +96,6 @@ final class Translator {
 	}
 
 	public function translate(?CommandSender $target, string $key, array $replacements = []): string {
-		$keys = array_merge(["%prefix"], array_keys($replacements));
-		$values = array_merge([$this->plugin->getPrefix()], array_values($replacements));
-
 		$language = (($target instanceof Player) ? ($this->languages[$target->getLocale()] ?? null) : null) ?? $this->defaultLanguage;
 		$translation = $language->getTranslation($key);
 
@@ -111,6 +108,6 @@ final class Translator {
 				$translation = $defaultTranslation;
 			}
 		}
-		return str_replace($keys, $values, $translation);
+		return str_replace(array_keys($replacements), array_values($replacements), $translation);
 	}
 }
