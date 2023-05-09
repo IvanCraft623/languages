@@ -48,34 +48,34 @@ $player->sendMessage($this->translator->translate($player, "message.hello.world"
 ```
 
 # Locales
-Locale | Language
---- | ---
-`bg_BG` | Bulgarian
-`cs_CZ` | Czech
-`da_DK` | Danish
-`de_DE` | German
-`el_GR` | Greek
-`en_GB` | British English
-`en_US` | American English
-`es_ES` | Spanish
-`es_MX` | Mexican Spanish
-`fi_FI` | Finnish
-`fr_CA` | Canadian French
-`fr_FR` | French
-`hu_HU` | Hungarian
-`id_ID` | Indonesian
-`it_IT` | Italian
-`ja_JP` | Japanese
-`ko_KR` | Korean
-`nl_NL` | Dutch
-`nb_NO` | Norwegian Bokmål
-`pl_PL` | Polish
-`pt_BR` | Brazilian Portuguese
-`pt_PT` | Portuguese
-`ru_RU` | Russian
-`sk_SK` | Slovak
-`sv_SE` | Swedish
-`tr_TR` | Turkish
-`uk_UA` | Ukrainian
-`zh_CN` | Chinese Simplified
-`zh_TW` |  Chinese Traditional
+| Locale | Language |
+| :------------- | --------------------: |
+| en_US         | English (United States) |
+| en_GB         | English (United Kingdom) |
+| de_DE         | Deutsch (Deutschland) |
+| es_ES         | Español (España) |
+| es_MX         | Español (México) |
+| fr_FR         | Français (France) |
+| fr_CA         | Français (Canada) |
+| it_IT         | Italiano (Italia) |
+| ja_JP         | 日本語 (日本)           |
+| ko_KR         | 한국어 (대한민국)       |
+| pt_BR         | Português (Brasil) |
+| pt_PT         | Português (Portugal) |
+| ru_RU         | Русский (Россия)     |
+| zh_CN         | 中文(简体)             |
+| zh_TW         | 中文(繁體)             |
+| nl_NL         | Nederlands (Nederland) |
+| bg_BG         | Български (България) |
+| cs_CZ         | Čeština (Česko)       |
+| da_DK         | Dansk (Danmark)       |
+| el_GR         | Ελληνικά (Ελλάδα)       |
+| fi_FI         | Suomi (Suomi)         |
+| hu_HU         | Magyar (Magyarország) |
+| id_ID         | Indonesia (Indonesia) |
+| nb_NO         | Norsk bokmål (Norge)  |
+| pl_PL         | Polski (Polska)      |
+| sk_SK         | Slovenčina (Slovensko) |
+| sv_SE         | Svenska (Sverige)    |
+| tr_TR         | Türkçe (Türkiye)     |
+| uk_UA         | Українська (Україна) |
