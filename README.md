@@ -48,34 +48,34 @@ $player->sendMessage($this->translator->translate($player, "message.hello.world"
 ```
 
 # Locales
-Locale | Language
---- | ---
-`bg_BG` | Bulgarian
-`cs_CZ` | Czech
-`da_DK` | Danish
-`de_DE` | German
-`el_GR` | Greek
-`en_GB` | British English
-`en_US` | American English
-`es_ES` | Spanish
-`es_MX` | Mexican Spanish
-`fi_FI` | Finnish
-`fr_CA` | Canadian French
-`fr_FR` | French
-`hu_HU` | Hungarian
-`id_ID` | Indonesian
-`it_IT` | Italian
-`ja_JP` | Japanese
-`ko_KR` | Korean
-`nl_NL` | Dutch
-`nb_NO` | Norwegian Bokmål
-`pl_PL` | Polish
-`pt_BR` | Brazilian Portuguese
-`pt_PT` | Portuguese
-`ru_RU` | Russian
-`sk_SK` | Slovak
-`sv_SE` | Swedish
-`tr_TR` | Turkish
-`uk_UA` | Ukrainian
-`zh_CN` | Chinese Simplified
-`zh_TW` |  Chinese Traditional
+| Locale | Language |
+| :------------- | --------------------: |
+| en_US         | English (United States) |
+| en_GB         | English (United Kingdom) |
+| de_DE         | Deutsch (Germany) |
+| es_ES         | Español (Spanish) |
+| es_MX         | Español (Mexican Spanish) |
+| fr_FR         | Français (French) |
+| fr_CA         | Français (Canadian French) |
+| it_IT         | Italiano (Italian) |
+| ja_JP         | 日本語 (Japanese)           |
+| ko_KR         | 한국어 (Korean)       |
+| pt_BR         | Português (Brazilian Portuguese) |
+| pt_PT         | Português (Portuguese) |
+| ru_RU         | Русский (Russian)     |
+| zh_CN         | 中文(Chinese Simplified)             |
+| zh_TW         | 中文(Chinese Traditional)             |
+| nl_NL         | Nederlands (Netherlands) |
+| bg_BG         | Български (Bulgarian) |
+| cs_CZ         | Čeština (Czech)       |
+| da_DK         | Dansk (Danish)       |
+| el_GR         | Ελληνικά (Greek)       |
+| fi_FI         | Suomi (Finnish)         |
+| hu_HU         | Magyar (Hungarian) |
+| id_ID         | Indonesia (Indonesian) |
+| nb_NO         | Norsk bokmål (Norwegian Bokmål)  |
+| pl_PL         | Polski (Polish)      |
+| sk_SK         | Slovenčina (Slovak) |
+| sv_SE         | Svenska (Swedish)    |
+| tr_TR         | Türkçe (Turkish)     |
+| uk_UA         | Українська (Ukrainian) |
