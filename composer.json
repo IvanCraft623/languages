@@ -1,0 +1,24 @@
+{
+    "name": "ivancraft623/languages",
+    "description": "A pocketmine virion that allows plugins to make a multi-language system.",
+    "type": "library",
+    "license": "Apache-2.0",
+    "require": {
+        "pocketmine/pocketmine-mp": "^4.0.0"
+    },
+    "autoload": {
+        "classmap": ["src"]
+    },
+    "authors": [
+        {
+            "name": "IvanCraft623",
+            "email": "ivancraft623@gmail.com"
+        }
+    ],
+    "extra": {
+        "virion": {
+            "spec": "3.0",
+            "namespace-root": "IvanCraft623\\languages"
+        }
+    }
+}
