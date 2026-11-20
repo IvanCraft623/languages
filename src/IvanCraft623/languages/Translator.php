@@ -16,35 +16,35 @@ final class Translator {
 
 	public const MINECRAFT_LOCALES = [
 		// See  ->  https://github.com/Mojang/bedrock-samples/blob/main/resource_pack/texts/language_names.json
-		"en_US", // English (United States)
-		"en_GB", // English (United Kingdom)
-		"de_DE", // Deutsch (Deutschland)
-		"es_ES", // Español (España)
-		"es_MX", // Español (México)
-		"fr_FR", // Français (France)
-		"fr_CA", // Français (Canada)
-		"it_IT", // Italiano (Italia)
-		"ja_JP", // 日本語 (日本)
-		"ko_KR", // 한국어 (대한민국)
-		"pt_BR", // Português (Brasil)
-		"pt_PT", // Português (Portugal)
-		"ru_RU", // Русский (Россия)
-		"zh_CN", // 中文(简体)
-		"zh_TW", // 中文(繁體)
-		"nl_NL", // Nederlands (Nederland)
-		"bg_BG", // Български (България)
-		"cs_CZ", // Čeština (Česko)
-		"da_DK", // Dansk (Danmark)
-		"el_GR", // Ελληνικά (Ελλάδα)
-		"fi_FI", // Suomi (Suomi)
-		"hu_HU", // Magyar (Magyarország)
-		"id_ID", // Indonesia (Indonesia)
-		"nb_NO", // Norsk bokmål (Norge)
-		"pl_PL", // Polski (Polska)
-		"sk_SK", // Slovenčina (Slovensko)
-		"sv_SE", // Svenska (Sverige)
-		"tr_TR", // Türkçe (Türkiye)
-		"uk_UA", // Українська (Україна)
+		"en_US" => true, // English (United States)
+		"en_GB" => true, // English (United Kingdom)
+		"de_DE" => true, // Deutsch (Deutschland)
+		"es_ES" => true, // Español (España)
+		"es_MX" => true, // Español (México)
+		"fr_FR" => true, // Français (France)
+		"fr_CA" => true, // Français (Canada)
+		"it_IT" => true, // Italiano (Italia)
+		"ja_JP" => true, // 日本語 (日本)
+		"ko_KR" => true, // 한국어 (대한민국)
+		"pt_BR" => true, // Português (Brasil)
+		"pt_PT" => true, // Português (Portugal)
+		"ru_RU" => true, // Русский (Россия)
+		"zh_CN" => true, // 中文(简体)
+		"zh_TW" => true, // 中文(繁體)
+		"nl_NL" => true, // Nederlands (Nederland)
+		"bg_BG" => true, // Български (България)
+		"cs_CZ" => true, // Čeština (Česko)
+		"da_DK" => true, // Dansk (Danmark)
+		"el_GR" => true, // Ελληνικά (Ελλάδα)
+		"fi_FI" => true, // Suomi (Suomi)
+		"hu_HU" => true, // Magyar (Magyarország)
+		"id_ID" => true, // Indonesia (Indonesia)
+		"nb_NO" => true, // Norsk bokmål (Norge)
+		"pl_PL" => true, // Polski (Polska)
+		"sk_SK" => true, // Slovenčina (Slovensko)
+		"sv_SE" => true, // Svenska (Sverige)
+		"tr_TR" => true, // Türkçe (Türkiye)
+		"uk_UA" => true, // Українська (Україна)
 	];
 
 	private PluginBase $plugin;
@@ -79,9 +79,6 @@ final class Translator {
 
 	public function registerLanguage(Language $language, bool $override = false): void {
 		$locale = $language->getLocale();
-		if (!in_array($language->getLocale(), self::MINECRAFT_LOCALES, true)) {
-			throw new InvalidArgumentException("Language ".$locale." is not available in minecraft");
-		}
 		if (!$override && $this->isLanguageRegistered($locale)) {
 			throw new InvalidArgumentException("Trying to overwrite an already registered Language");
 		}
@@ -94,6 +91,13 @@ final class Translator {
 
 	public function getLanguage(string $locale): ?Language {
 		return $this->languages[$locale] ?? null;
+	}
+
+	/**
+	 * Whether clients can report this locale; others are only seen when chosen.
+	 */
+	public static function isMinecraftLocale(string $locale): bool {
+		return isset(self::MINECRAFT_LOCALES[$locale]);
 	}
 
 	public function translate(?CommandSender $target, string $key, array $replacements = []): string {
