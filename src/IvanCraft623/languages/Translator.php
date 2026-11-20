@@ -72,7 +72,7 @@ final class Translator {
 	}
 
 	public function setDefaultLanguage(Language $language): void {
-		if (!in_array($language, $this->languages, true)) {
+		if (($this->languages[$language->getLocale()] ?? null) !== $language) {
 			throw new InvalidArgumentException("Language is not registered");
 		}
 		$this->defaultLanguage = $language;
