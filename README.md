@@ -37,6 +37,12 @@ When the message is sent to the console or translation is not available, the def
 $this->translator->setDefaultLanguage($english);
 ```
 
+### Player language
+Any locale can be registered, even ones clients never report. Let a player pick one (saving it is up to you):
+```php
+$this->translator->setPlayerLanguage($player, $language); // null removes it
+```
+
 ### Tranlate
 For example, when a player joins the server. You can also replace parameters.
 ```php

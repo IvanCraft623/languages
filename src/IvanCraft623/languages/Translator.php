@@ -9,6 +9,7 @@ use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 
 use InvalidArgumentException;
+use WeakMap;
 
 final class Translator {
 
@@ -53,9 +54,13 @@ final class Translator {
 	private array $languages = [];
 
 	private Language $defaultLanguage;
-	
+
+	/** @var WeakMap<Player, Language> */
+	private WeakMap $playerLanguages;
+
 	public function __construct(PluginBase $plugin) {
 		$this->plugin = $plugin;
+		$this->playerLanguages = new WeakMap();
 	}
 
 	public function getPlugin(): PluginBase{
@@ -100,8 +105,32 @@ final class Translator {
 		return isset(self::MINECRAFT_LOCALES[$locale]);
 	}
 
+	/**
+	 * Overrides the player's client language until they leave; null removes it.
+	 */
+	public function setPlayerLanguage(Player $player, ?Language $language): void {
+		if ($language === null) {
+			unset($this->playerLanguages[$player]);
+			return;
+		}
+		if (($this->languages[$language->getLocale()] ?? null) !== $language) {
+			throw new InvalidArgumentException("Language is not registered");
+		}
+		$this->playerLanguages[$player] = $language;
+	}
+
+	/**
+	 * The player's chosen language, else their client's, else the default.
+	 */
+	public function getLanguageOf(?CommandSender $target): Language {
+		if (!$target instanceof Player) {
+			return $this->defaultLanguage;
+		}
+		return $this->playerLanguages[$target] ?? $this->languages[$target->getLocale()] ?? $this->defaultLanguage;
+	}
+
 	public function translate(?CommandSender $target, string $key, array $replacements = []): string {
-		$language = (($target instanceof Player) ? ($this->languages[$target->getLocale()] ?? null) : null) ?? $this->defaultLanguage;
+		$language = $this->getLanguageOf($target);
 		$translation = $language->getTranslation($key);
 
 		if ($translation === null) {
